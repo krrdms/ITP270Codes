@@ -10,7 +10,7 @@ targets = ['127.0.0.1']
 
 def grab_banner(soc):
     soc.sendall('Hello\r\n'.encode())
-    response = soc.recv(128)
+    response = soc.recv(1024)
     print(f'[*] banner: {response}')
 
 def connect_port(ip, port):
