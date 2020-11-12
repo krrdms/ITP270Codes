@@ -1,0 +1,8 @@
+/UDPDateServer/basic_client.spec
+/UDPDateServer/basic_server.spec
+/UDPDateServer/build/
+/UDPDateServer/dist/
+/UDPRemoteShell/dist/basic_server/
+/UDPRemoteShell/build/basic_server/
+/UDPRemoteShell/basic_server.spec
+/.idea/
