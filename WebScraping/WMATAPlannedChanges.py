@@ -5,8 +5,9 @@ import re
 request = requests.get("https://www.wmata.com/service/status/index.cfm")
 parseHTML = BeautifulSoup(request.text, 'html.parser')
 htmlDivs = parseHTML.find('div',{'class': 'planned-changes-table'})
-htmlTR  = htmlDivs.find_all('tr')
+htmlTR = htmlDivs.find_all('tr')
 hits = set()
+
 for TR in htmlTR:
     TR = re.sub(r'\<.*\>', " ", str(TR))
     TR = re.sub(r'\n', "", str(TR))
@@ -16,6 +17,7 @@ for TR in htmlTR:
     if hit:
         hit = tuple(hit)
         hits.add(hit)
+
 
 for hit in hits:
     print(hit)
