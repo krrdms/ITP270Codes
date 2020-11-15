@@ -43,4 +43,5 @@ def check_result(page_html):
     return False
 
 
-brute_force()
+if __name__ == "__main__":
+    brute_force()
