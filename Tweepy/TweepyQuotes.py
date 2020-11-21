@@ -1,23 +1,27 @@
 import tweepy
+import random
 from time import sleep
-from credentials import *
 
 auth = tweepy.OAuthHandler('xxxx', 'xxxx')
 auth.set_access_token('xxxx-xxxx', 'xxxx')
 api = tweepy.API(auth)
 
-my_file=open('quotes.txt','r')
-file_lines=my_file.readlines()
-my_file.close()
+f=open('verne.txt')
+quotes=f.readlines()
+f.close()
+count=len(quotes)
 
-for line in file_lines:
+while count > 0:
+    quote = random.choice(quotes)
     try:
-        print(line)
-        if line != '\n':
-            sleep(60)
-            api.update_status(line)
+        print(quote)
+        if quote != '\n':
+            api.update_status(quote)
         else:
             pass
     except tweepy.TweepError as e:
         print(e.reason)
-    sleep(60)
+    quotes.remove(quote)
+    sleep(60 * count * 2)
+    count -= 1
+

@@ -7,3 +7,19 @@
 /UDPRemoteShell/basic_server.spec
 /.idea/
 /WebScraping/WMATAIncidentsAPI.py
+/DVWA Brute Force/DVWA_brute_force_live.py
+/DVWA Command Injection/DVWA_command_injection_live.py
+/Automation/ftp.pcap
+/Automation/http.pcap
+/Automation/nmap-os.pcap
+/Automation/ping.pcap
+/Automation/smb.pcap
+/BrowserDatabaseParser/Mozilla-Data/places.sqlite-shm
+/BrowserDatabaseParser/Mozilla-Data/places.sqlite-wal
+/Automation/dns-bpf.pcap
+/Automation/dns-soa.pcap
+/Automation/https.pcap
+/Tweepy/TweepyDriver.py
+/Tweepy/TweepyDriver2 copy.py
+/Tweepy/TweepyRetweetUnclean.py
+/Tweepy/Tweepy Clean Up.py

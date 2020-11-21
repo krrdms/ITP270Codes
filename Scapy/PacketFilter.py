@@ -4,7 +4,7 @@ from datetime import datetime
 import socket
 
 # Figure out the IP address of the first non-lo interface
-localIPAddr = socket.gethostbyname(socket.gethostname())
+localIPAddr = "192.168.65.49"
 
 # Ports to listen for
 # The line below listens for selected ports, the commented out line
@@ -22,16 +22,14 @@ not meet specified conditions, then we return False.
 
 
 def build_lfilter(pkt):
-    # Exclude packets that come from this machine
-#    if IP in pkt:
-#        if pkt[IP].src == localIPAddr:
-#            return False
-
-    if TCP in pkt and pkt[TCP].dport in tcpPorts:
-        return True
+    # Exclude packets that dont come from this machine
+    if IP in pkt and TCP in pkt:
+        if pkt[IP].dst == localIPAddr and pkt[TCP].dport in tcpPorts:
+            return True
+        else:
+            return False
     else:
         return False
-
 
 '''
 This function outputs basic information about the packet.

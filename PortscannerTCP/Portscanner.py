@@ -6,7 +6,7 @@ port_list = {21:"FTP", 22:"SSH", 23:"Telnet",
              587:"Sendmail", 3306:"MySQL", 3389:"MS Remote Desktop",
              5900:"VNC Remote Desktop"}
 
-targets = ['127.0.0.1']
+targets = ["192.168.65.49"]
 
 def grab_banner(soc):
     soc.sendall('Hello\r\n'.encode())
