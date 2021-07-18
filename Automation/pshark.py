@@ -55,5 +55,5 @@ def capture_dns_traffic_saved():
 
 
 #capture_web_traffic_saved()
-#capture_ftp_traffic_saved()
-capture_dns_traffic_saved()
+capture_ftp_traffic_saved()
+#capture_dns_traffic_saved()

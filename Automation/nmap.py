@@ -19,24 +19,29 @@ def nmap_subnet_scan(target):
     return nmap.nmap_subnet_scan(target)
 
 
-def get_all_vals(var):
-    if type(var) is list:
-        for dvar in var:
-            for key, value in dvar.items():
-                if type(value) is dict:
-                    get_all_vals(value)
-                else:
-                    print(key,":", value)
-    else:
-        print(var)
+def nmap_syn_scan(target):
+    nmap = nmap3.NmapScanTechniques()
+    return nmap.nmap_syn_scan(target)
+
+
+def nmap_null_scan(target):
+    nmap = nmap3.Nmap()
+    return nmap.scan_command(target, "", "-sN")
+
+
+def nmap_udp_scan(target):
+    nmap = nmap3.NmapScanTechniques()
+    return nmap.nmap_udp_scan(target)
 
 
 def print_menu():
-    command = int(input("select 1 for nmap OS scan, 2 for nmap Version scan, 3 for nmap subnet scan"))
-    pos=0
+    command = int(input("select 1 for nmap OS scan, 2 for nmap Version scan, 3 for nmap subnet scan, 4 for SYN scan" +
+                        " 5 for NULL scan, 6 for UDP scan"))
+    pos = 0
+
     for target in targets:
         print(pos, target)
-        pos+=1
+        pos += 1
 
     tgt = int(input("enter the number associated with the chosen target "))
 
@@ -45,11 +50,17 @@ def print_menu():
     elif command == 2:
         output = nmap_version_scan(targets[tgt])
     elif command == 3:
-        output = nmap_subnet_scan(targets[tgt])
+        output = nmap_subnet_scan(targets[tgt]).items()
+    elif command == 4:
+        output = nmap_syn_scan(targets[tgt]).items()
+    elif command == 5:
+        output = nmap_null_scan(targets[tgt]).items()
+    elif command == 6:
+        output = nmap_udp_scan(targets[tgt]).items()
     else:
         output = None
 
-    print(get_all_vals(output))
+    print(output)
 
 
 if __name__ == "__main__":

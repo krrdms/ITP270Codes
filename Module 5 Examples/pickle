@@ -24,7 +24,7 @@ class car_object:
 
 
 def saveObject(obj,file):
-    with open(file,"wb") as pickleFile: # note append and binary mode#
+    with open(file,"wb") as pickleFile: # note write and binary mode#
          pickle.dump(obj, pickleFile)
 
 def loadObject(file):
