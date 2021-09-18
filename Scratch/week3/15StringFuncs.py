@@ -1,0 +1,15 @@
+phrase = "ITP 270 Programming for Cybersecurity"
+print(phrase)
+cap_phrase = phrase.capitalize()
+print("Capitalize:",cap_phrase)
+low_phrase = cap_phrase.lower()
+print("Lower:",low_phrase)
+title_phrase = low_phrase.title()
+print("Title:",title_phrase)
+print("phrase isalnum:",phrase,phrase.isalnum())
+strip_phrase = phrase.replace(" ","")
+print("strip_phrase isalnum:",strip_phrase,strip_phrase.isalnum())
+print("low_phrase islower:",low_phrase.islower())
+print("cap_phrase isupper:",cap_phrase.isupper())
+print("phrase swapcase:",phrase.swapcase())
+
