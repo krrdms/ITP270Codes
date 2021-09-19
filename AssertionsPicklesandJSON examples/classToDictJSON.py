@@ -1,6 +1,7 @@
 import json
 from collections import namedtuple
 
+
 class car_object:
 
     def __init__(self):
@@ -13,35 +14,38 @@ class car_object:
         self.moving = True
         self.speed = speed
 
-    def stopMoving (self):
+    def stopMoving(self):
         self.moving = False
         self.speed = 0
 
-    def changeDirection(self,direction):
+    def changeDirection(self, direction):
         self.direction = direction
 
-    def changeLocation(self,location):
+    def changeLocation(self, location):
         self.location = location
 
     def toJson(self):
         return json.dumps(self, default=lambda o: o.__dict__)
 
-def saveObject(obj,file):
-    with open(file,"w") as pickleFile: # note write mode#
+
+def saveObject(obj, file):
+    with open(file, "w") as pickleFile:  # note write mode#
         pickleFile.write(obj.toJson())
 
+
 def loadObject(file):
-    with open(file, "r") as pickleFile: # note write mode#
-        jsondata = pickleFile.read()
+    with open(file, "r") as pickleFile:  # note write mode#
+        JSONdata = pickleFile.read()
     pickleFile.close()
-    return json.loads(jsondata)
+    return json.loads(JSONdata)
+
 
 HondaCivic = car_object()
 HondaCivic.startMoving(80)
 print("speed:" + str(HondaCivic.speed) + " moving:" + str(HondaCivic.moving))
-saveObject(HondaCivic,"hfile")
+saveObject(HondaCivic, "Hfile")
 HondaCivic = None
 print(type(HondaCivic))
-HondaCivic = loadObject("hfile")
+HondaCivic = loadObject("Hfile")
 print(type(HondaCivic))
 print(str(HondaCivic))

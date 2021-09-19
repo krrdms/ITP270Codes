@@ -1,5 +1,6 @@
 import pickle
 
+
 class car_object:
 
     def __init__(self):
@@ -12,20 +13,21 @@ class car_object:
         self.moving = True
         self.speed = speed
 
-    def stopMoving (self):
+    def stopMoving(self):
         self.moving = False
         self.speed = 0
 
-    def changeDirection(self,direction):
+    def changeDirection(self, direction):
         self.direction = direction
 
-    def changeLocation(self,location):
+    def changeLocation(self, location):
         self.location = location
 
 
-def saveObject(obj,file):
-    with open(file,"wb") as pickleFile: # note write and binary mode#
-         pickle.dump(obj, pickleFile)
+def saveObject(obj, file):
+    with open(file, "wb") as pickleFile:  # note write and binary mode#
+        pickle.dump(obj, pickleFile)
+
 
 def loadObject(file):
     pickleFile = open(file, 'rb')
@@ -33,11 +35,12 @@ def loadObject(file):
     pickleFile.close()
     return obj
 
+
 HondaCivic = car_object()
 HondaCivic.startMoving(80)
 print("speed:" + str(HondaCivic.speed) + " moving:" + str(HondaCivic.moving))
-saveObject(HondaCivic,"hfile")
+saveObject(HondaCivic, "Hfile")
 HondaCivic = None
 print(type(HondaCivic))
-HondaCivic = loadObject("hfile")
+HondaCivic = loadObject("Hfile")
 print("speed:" + str(HondaCivic.speed) + " moving:" + str(HondaCivic.moving))
