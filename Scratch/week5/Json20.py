@@ -3,7 +3,7 @@ from collections import namedtuple
 import sys
 
 sys.path.insert(0, '.')
-import github.Scratch.week5.class8 as class8
+import github.Scratch.week5.class7 as class8
 
 
 class jCar(class8.car):
@@ -46,11 +46,11 @@ def main():
     HondaCivic.changeMovingDirection(80, "NE")
     print("speed:" + str(HondaCivic.speed) + " moving:" + str(HondaCivic.direction))
     print("-----")
-    jCar.saveObject(HondaCivic, "Car_Pickle")
+    jCar.saveObject(HondaCivic, "Car_Pickle.json")
     HondaCivic = None
     print(type(HondaCivic))
-    HondaCivic = classToClassJSON("Car_Pickle")
-    HondaCivicDict = classToDictJSON("Car_Pickle")
+    HondaCivic = classToClassJSON("Car_Pickle.json")
+    HondaCivicDict = classToDictJSON("Car_Pickle.json")
     print("-----")
     print(type(HondaCivic))
     print("[Class]: %s %d" % (HondaCivic.direction, HondaCivic.speed))

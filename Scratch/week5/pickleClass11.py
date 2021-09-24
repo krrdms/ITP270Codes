@@ -2,7 +2,7 @@ import pickle
 import sys
 
 sys.path.insert(0, '.')
-import github.Scratch.week5.class8 as class8
+import github.Scratch.week5.class7 as class8
 
 
 class pCar(class8.car):
