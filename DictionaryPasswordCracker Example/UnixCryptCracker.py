@@ -3,11 +3,11 @@ import crypt
 
 def testPass(cryptPass):
     salt = cryptPass[0:2]
-    dictfile = open('dictionary.txt')
-    for word in dictfile.readlines():
+    dictFile = open('dictionary.txt')
+    for word in dictFile.readlines():
         word = word.strip('\n')
         cryptWord = crypt.crypt(word, salt)
-        if (cryptWord == cryptPass):
+        if cryptWord == cryptPass:
             print("[+] Found Password:", word)
             return
     print("[-] Password Not Found")
