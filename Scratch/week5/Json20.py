@@ -22,9 +22,9 @@ class jCar(class8.car):
 
     @classmethod
     def loadObject(cls, file, obj_hook=None):
-        with open(file, "r") as pickleFile:  # note write mode#
-            JSONdata = pickleFile.read()
-        pickleFile.close()
+        with open(file, "r") as jsonFile:  # note write mode#
+            JSONdata = jsonFile.read()
+        jsonFile.close()
         if obj_hook == jCar.customCarDecoder:
             return json.loads(JSONdata, object_hook=obj_hook)
         else:
@@ -50,7 +50,7 @@ def main():
     HondaCivic = None
     print(type(HondaCivic))
     HondaCivic = classToClassJSON("Car_Pickle.json")
-    HondaCivicDict = classToDictJSON("Car_Pickle.json")
+    HondaCivicDict = jCar.loadObject("Car_Pickle.json")
     print("-----")
     print(type(HondaCivic))
     print("[Class]: %s %d" % (HondaCivic.direction, HondaCivic.speed))
