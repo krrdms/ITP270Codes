@@ -18,7 +18,7 @@ class jCar(class8.car):
 
     @classmethod
     def customCarDecoder(cls, carDict):
-        return namedtuple('car', carDict.keys())(*carDict.values())
+        return namedtuple('jCar', carDict.keys())(*carDict.values())
 
     @classmethod
     def loadObject(cls, file, obj_hook=None):
@@ -44,15 +44,18 @@ def classToClassJSON(fileName):
 def main():
     HondaCivic = jCar()
     HondaCivic.changeMovingDirection(80, "NE")
+    print(type(HondaCivic))
+    print(dir(HondaCivic))
     print("speed:" + str(HondaCivic.speed) + " moving:" + str(HondaCivic.direction))
     print("-----")
     jCar.saveObject(HondaCivic, "Car_Pickle.json")
     HondaCivic = None
     print(type(HondaCivic))
     HondaCivic = classToClassJSON("Car_Pickle.json")
-    HondaCivicDict = jCar.loadObject("Car_Pickle.json")
+    HondaCivicDict = classToDictJSON("Car_Pickle.json")
     print("-----")
     print(type(HondaCivic))
+    print(dir(HondaCivic))
     print("[Class]: %s %d" % (HondaCivic.direction, HondaCivic.speed))
     print(type(HondaCivicDict))
     print("[Dict]: " + HondaCivicDict['direction'], HondaCivicDict['speed'])
