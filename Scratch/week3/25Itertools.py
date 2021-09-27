@@ -4,6 +4,7 @@ import string
 password = "g3T!"
 max_password_length = 8
 
+
 def crackPass(max_password_length):
     # global password
     chars = 0
