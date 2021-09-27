@@ -34,7 +34,7 @@ def timeProcessExample():
     # calculate how long the whole process ran
     startTime = time.process_time()
     thing = random.randint(10, 100)
-    endTime = random.randint(10, 100)
+    endTime = time.process_time()
     print("timeProcessExample (usec):", endTime - startTime)
 
 
