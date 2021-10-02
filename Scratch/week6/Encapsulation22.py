@@ -82,6 +82,7 @@ def printMovie(movie):
 
 
 def main():
+    # main script
     while True:
         title = input("[?]Enter Movie Title: ")
         if len(title) == 0:
