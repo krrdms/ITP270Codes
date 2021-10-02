@@ -60,7 +60,9 @@ class movieObj:
 
 
 def magic(title):
-    searchURL = "http://www.omdbapi.com/?t=" + title + "&apikey=f98056f0"
+    with open("movie.key") as keyFile:
+        key = keyFile.read()
+    searchURL = "http://www.omdbapi.com/?t=" + title + "&apikey=" + key
     movieRequest = requests.get(searchURL)
     return movieRequest.json()
 
