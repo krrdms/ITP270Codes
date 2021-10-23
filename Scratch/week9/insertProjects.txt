@@ -1,0 +1,2 @@
+INSERT INTO projects (id, short_name, name, description)
+    VALUES (?,?,?,?);
