@@ -8,7 +8,7 @@ emails = re.findall('[\w\.-]+@[\w\.-]+', testString)
 for email in emails:
     print(email)
 
-# sentence4 = '<a href="https://www.nvcc.edu">'
-# print(sentence4)
-# sentence4 = re.findall("https://[\w|\.]+",sentence4)
-# print(sentence4)
+sentence4 = '<a href="https://www.nvcc.edu">'
+print(sentence4)
+sentence4 = re.findall("https://[\w|\.]+",sentence4)
+print(sentence4)
