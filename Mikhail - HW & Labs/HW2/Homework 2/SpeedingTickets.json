@@ -1,0 +1,126 @@
+{
+    "Case Reference": "862FC",
+    "Date": "Sep-25-2021",
+    "Time": "13:40:35",
+    "Speed Limit": "25",
+    "Actual Speed": "42",
+    "Fine": "$135"
+}
+{
+    "Case Reference": "00702",
+    "Date": "Sep-25-2021",
+    "Time": "13:40:47",
+    "Speed Limit": "35",
+    "Actual Speed": "53",
+    "Fine": "$140"
+}
+{
+    "Case Reference": "54B9E",
+    "Date": "Sep-25-2021",
+    "Time": "13:40:55",
+    "Speed Limit": "45",
+    "Actual Speed": "60",
+    "Fine": "$125"
+}
+{
+    "Case Reference": "19D09",
+    "Date": "Sep-25-2021",
+    "Time": "13:43:25",
+    "Speed Limit": "20",
+    "Actual Speed": "50",
+    "Fine": "$200"
+}
+[
+    {
+        "Case Reference": "7E01A",
+        "Date": "Sep-25-2021",
+        "Time": "15:42:39",
+        "Speed Limit": "20",
+        "Actual Speed": "40",
+        "Fine": "$150"
+    }
+]
+[
+    {
+        "Case Reference":"2FA1A",
+        "Date":"Sep-25-2021",
+        "Time":"15:43:58",
+        "Speed Limit":"20",
+        "Actual Speed":"70",
+        "Fine":"$300"
+    }
+]
+[
+    {
+        "Case Reference":"70C68",
+        "Date":"Sep-25-2021",
+        "Time":"15:44:07",
+        "Speed Limit":"30",
+        "Actual Speed":"60",
+        "Fine":"$200"
+    }
+]
+{
+    "Case Reference":"4A3D6",
+    "Date":"Sep-25-2021",
+    "Time":"16:34:28",
+    "Speed Limit":"10",
+    "Actual Speed":"40",
+    "Fine":"$200"
+}
+{
+    "Case Reference":"766D9",
+    "Date":"Sep-25-2021",
+    "Time":"16:34:39",
+    "Speed Limit":"10",
+    "Actual Speed":"50",
+    "Fine":"$250"
+}
+{
+    "Case Reference":"7776D",
+    "Date":"Sep-25-2021",
+    "Time":"16:35:03",
+    "Speed Limit":"40",
+    "Actual Speed":"70",
+    "Fine":"$200"
+}
+,{
+    "Case Reference":"03992",
+    "Date":"Sep-25-2021",
+    "Time":"16:35:13",
+    "Speed Limit":"40",
+    "Actual Speed":"50",
+    "Fine":"$100"
+}
+,{
+    "Case Reference":"7BFFD",
+    "Date":"Sep-25-2021",
+    "Time":"16:36:05",
+    "Speed Limit":"40",
+    "Actual Speed":"50",
+    "Fine":"$100"
+}
+Record: {
+    "Case Reference":"170BD",
+    "Date":"Sep-25-2021",
+    "Time":"16:36:20",
+    "Speed Limit":"20",
+    "Actual Speed":"40",
+    "Fine":"$150"
+}
+Record: {
+    "Case Reference":"6F55B",
+    "Date":"Sep-25-2021",
+    "Time":"16:36:42",
+    "Speed Limit":"20",
+    "Actual Speed":"30",
+    "Fine":"$100"
+}
+{
+    "Date":"Sep-25-2021",
+    "Time":"16:37:42",
+    "Speed Limit":"10",
+    "Actual Speed":"40",
+    "Fine":"$200"
+}
+6AD0D
