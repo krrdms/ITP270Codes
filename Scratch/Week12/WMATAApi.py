@@ -1,8 +1,11 @@
 import http.client, urllib.request, urllib.parse, urllib.error, base64
 import json
 
+with open("apikey.txt") as f:
+    apiKey = f.read()
+
 headers = {
-    'api_key': ''
+    'api_key': apiKey
 }
 
 params = urllib.parse.urlencode({

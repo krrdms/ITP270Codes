@@ -22,8 +22,11 @@ def convertData(*sources, headers):
 
 
 def main():
+    with open("apikey.txt") as f:
+        apiKey = f.read()
+
     headers = {
-        'api_key': ''
+        'api_key': apiKey
     }
 
     busData, railData, eleData = convertData("/Incidents.svc/json/BusIncidents?", "/Incidents.svc/json/Incidents?",
