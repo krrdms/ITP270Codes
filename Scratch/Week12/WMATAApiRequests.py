@@ -3,7 +3,7 @@ import json
 
 
 def getData(url, headers):
-    data = ""
+    data = bytearray()
     url = "https://api.wmata.com"+url+"Route="
     try:
         data = requests.get(url, headers=headers)
@@ -26,10 +26,8 @@ def main():
         'api_key': '68d2e21415984e969645d8f1e0d31750'
     }
 
-    busData, railData, eleData = convertData("/Incidents.svc/json/BusIncidents?",
-                                             "/Incidents.svc/json/Incidents?",
-                                             "/Incidents.svc/json/ElevatorIncidents?",
-                                             headers=headers)
+    busData, railData, eleData = convertData("/Incidents.svc/json/BusIncidents?", "/Incidents.svc/json/Incidents?",
+                                             "/Incidents.svc/json/ElevatorIncidents?", headers=headers)
 
     for incident in busData['BusIncidents']:
         print(incident)
