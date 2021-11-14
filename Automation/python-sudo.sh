@@ -1,2 +1,3 @@
 #!/bin/bash
-sudo /home/eric/Envs/my-project/bin/python "$@"
+sudo bash
+/Users/jka/PycharmProjects/ITP270Codes/venv/bin/python "$@"

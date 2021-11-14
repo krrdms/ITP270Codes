@@ -12,6 +12,7 @@ params = urllib.parse.urlencode({
     'Route': '{string}',
 })
 
+
 def getData(url):
     try:
         conn = http.client.HTTPSConnection('api.wmata.com')
@@ -23,6 +24,7 @@ def getData(url):
         data = "[Errno {0}] {1}".format(e.errno, e.strerror)
 
     return data
+
 
 busData = getData("/Incidents.svc/json/BusIncidents?")
 elevatorData = getData("/Incidents.svc/json/ElevatorIncidents?")

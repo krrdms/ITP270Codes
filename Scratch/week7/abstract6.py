@@ -15,7 +15,7 @@ class openWeather(restCaller):
             kf = keyFile.read()
 
         url = "https://community-open-weather-map.p.rapidapi.com/weather"
-        units = "imperial"
+        units = "metric"
 
         querystring = {"q": param, "units": units}
 

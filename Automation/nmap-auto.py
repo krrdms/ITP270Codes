@@ -1,17 +1,35 @@
 import nmap3
+from elevate import elevate
 
-def nmap_os_scan(target):
+
+def process_input(nmap):
+    result = {}
+    targets = []
+    with open("nmap-auto-targets.txt") as f:
+        _targets = f.readlines()
+    for target in _targets:
+        choice,tgt = target.split(",")
+        choice = int(choice)
+        if choice == 0:
+            print("Trying OS Detection:")
+            result = nmap.nmap_os_detection(tgt)
+            print(result[0].items())
+        elif choice == 1:
+            print("Trying Version Detection:")
+            result = nmap.nmap_version_detection(tgt)
+            print(result[0].items())
+        elif choice == 2:
+            print("Trying Null Scan:")
+            result = nmap.nmap_stealth_scan(tgt, "", "-sN")
+            print(result)
+
+    return True
+
+
+def main():
     nmap = nmap3.Nmap()
-    return nmap.nmap_os_detection(target)
+    process_input(nmap)
 
-def nmap_version_scan(target):
-    nmap = nmap3.Nmap()
-    return nmap.nmap_version_detection(target)
 
-def nmap_null_scan(target):
-    nmap = nmap3.Nmap()
-    return nmap.scan_command(target, "", "-sN")
-
-result = nmap_null_scan("192.168.65.24").items()
-
-print(result)
+if __name__ == '__main__':
+    main()

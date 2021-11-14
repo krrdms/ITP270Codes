@@ -18,6 +18,6 @@ for TR in htmlTR:
         hit = tuple(hit)
         hits.add(hit)
 
-
+print("hits:", len(hits))
 for hit in hits:
     print(hit)
