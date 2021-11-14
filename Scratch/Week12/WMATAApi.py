@@ -2,7 +2,7 @@ import http.client, urllib.request, urllib.parse, urllib.error, base64
 import json
 
 headers = {
-    'api_key': '5ff34bddcaaf4cedb7a95879fc903604'
+    'api_key': ''
 }
 
 params = urllib.parse.urlencode({
