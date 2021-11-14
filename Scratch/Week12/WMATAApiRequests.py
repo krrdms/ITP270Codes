@@ -23,7 +23,7 @@ def convertData(*sources, headers):
 
 def main():
     headers = {
-        'api_key': '68d2e21415984e969645d8f1e0d31750'
+        'api_key': ''
     }
 
     busData, railData, eleData = convertData("/Incidents.svc/json/BusIncidents?", "/Incidents.svc/json/Incidents?",
