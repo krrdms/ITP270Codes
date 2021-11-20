@@ -1,0 +1,15 @@
+admin
+root
+administrator
+super
+superuser
+www
+nobody
+ec-user
+ubuntu
+wheel
+toor
+mail
+sendmail
+postfix
+apache
